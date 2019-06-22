@@ -1,4 +1,5 @@
 import express from 'express'
+import config from './config'
 
 let _server
 
@@ -7,16 +8,16 @@ const server = {
   // Inicia el servidor.
   start() {
     const app = express()
-    const port = 9000
 
-    // Guardamos la instancia del servidor en el puerto 9000.
+    // Seteo variables de configuración desde el .env
+    config(app)
+
+    const port = app.locals.config.PORT
+    const host = app.locals.config.HOST
+
+    // Guardamos la instancia del servidor.
     _server = app.listen(port, () => {
       // Muestro información al arrancar el servidor.
-      const address = _server.address()
-      const host = address.address === '::'
-          ? 'localhost'  // Cuando es localhost
-          : address      // Cuando no es localhost
-
       console.log(`Servidor abierto en http://${host}:${port}`)
 
       return _server
