@@ -1,5 +1,7 @@
 import express from 'express'
+
 import config from './config'
+import router from './router.js'
 
 let _server
 
@@ -11,6 +13,9 @@ const server = {
 
     // Seteo variables de configuración desde el .env
     config(app)
+
+    // Cargo las rutas con la instancia de app
+    router(app)
 
     const port = app.locals.config.PORT
     const host = app.locals.config.HOST
