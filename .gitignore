@@ -39,3 +39,4 @@ pids
 *.seed
 *.swp
 *.swo
+/server/package-lock.json
