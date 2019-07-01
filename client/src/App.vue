@@ -3,6 +3,8 @@
     <div class='ui inverted vertical masthead center aligned segment'>
       <div class='ui container'>
         <div class='ui large secondary inverted pointing menu'>
+          <router-link exact-active-class='active' class='item' v-bind:to='{ name: "home"}'>Home</router-link>
+          <router-link exact-active-class='active' class='item' v-bind:to='{ name: "create"}'>Crear Receta</router-link>
           <div class='right item'>
             <a class='ui inverted button'>Log in</a>
           </div>
