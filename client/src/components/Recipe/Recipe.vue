@@ -26,8 +26,8 @@
           .then(response => response.data)
           .then(data => {
             this.cards = data
-            console.log(data)
           })
+          .catch(() => this.$router.push({ name: 'login' }))
       }
     }
   }

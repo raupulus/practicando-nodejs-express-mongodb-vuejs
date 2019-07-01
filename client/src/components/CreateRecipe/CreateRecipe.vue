@@ -28,7 +28,7 @@
           method: 'POST',
           url: `${process.env.API}recetas`,
           headers: {
-            'Authorization': `JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.e30.FyKpDq5EUXNk0AHqWmrK2LVgtV4maW7VRWSET6oDOoE`
+            'Authorization': localStorage.getItem('token')
           },
           data: {
             title: this.title,
@@ -52,6 +52,7 @@
               this.success = false
             }, 3000)
           })
+          .catch(() => this.$router.push({ name: 'login' }))
       }
     }
   }

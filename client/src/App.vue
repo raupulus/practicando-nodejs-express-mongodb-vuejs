@@ -6,7 +6,7 @@
           <router-link exact-active-class='active' class='item' v-bind:to='{ name: "home"}'>Home</router-link>
           <router-link exact-active-class='active' class='item' v-bind:to='{ name: "create"}'>Crear Receta</router-link>
           <div class='right item'>
-            <a class='ui inverted button'>Log in</a>
+            <router-link exact-active-class='active' class='ui inverted button' v-bind:to='{ name: "login"}'>Login</router-link>
           </div>
         </div>
       </div>
