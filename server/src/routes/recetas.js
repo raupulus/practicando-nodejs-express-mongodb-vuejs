@@ -1,10 +1,16 @@
 import express from 'express'
 
-// Importo el controlador para recetas
+// Importo el controlador para recetas.
 import RecetaController from '../controllers/recetas'
+
+// Importo solo el middleware auth.
+import { auth } from '../middlewares'
 
 // Defino que las rutas serán gestionadas por el router de express
 const router = express.Router()
+
+// Indico que use el middleware "auth"
+router.use(auth)
 
 // Ruta para acceder a la raíz partiendo de "/recetas".
 router.route('/')
